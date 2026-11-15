@@ -1,0 +1,36 @@
+/* AeroLaminate Pro - global styles. Author: Anwesh Ajitabh Dash. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", Consolas, "Cascadia Mono", monospace;
+  color-scheme: light;
+}
+html, body { background: #f7f4ec; color: #262624; }
+body { font-size: 12px; -webkit-font-smoothing: antialiased; }
+
+@layer components {
+  .panel { @apply border border-rule bg-ivory-50; }
+  .lbl { @apply text-[10.5px] uppercase tracking-wide text-graphite-500; }
+  .inp {
+    @apply h-[22px] w-full border border-rule bg-white px-1.5 font-mono text-[11.5px] text-graphite-900 outline-none;
+  }
+  .inp:focus { @apply border-amber-500 ring-1 ring-amber-400/40; }
+  .inp-bad { @apply border-bad bg-red-50; }
+  .btn {
+    @apply inline-flex h-[22px] items-center gap-1 border border-rule bg-ivory-50 px-2 text-[11px] text-graphite-800 hover:bg-ivory-200 disabled:opacity-40;
+  }
+  .btn-primary { @apply border-amber-600 bg-amber-500 text-graphite-900 hover:bg-amber-400; }
+  .tbl { @apply w-full border-collapse font-mono text-[11px]; }
+  .tbl th { @apply border-b border-rule bg-ivory-100 px-1.5 py-[3px] text-left font-sans text-[10.5px] font-semibold text-graphite-600; }
+  .tbl td { @apply border-b border-ivory-200 px-1.5 py-[2px] text-graphite-800; }
+  .tbl tr:hover td { @apply bg-ivory-100; }
+  .num { @apply text-right tabular-nums; }
+  .sec-title { @apply flex items-center justify-between border-b border-rule bg-ivory-100 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-graphite-700; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}

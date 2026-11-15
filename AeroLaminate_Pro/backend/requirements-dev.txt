@@ -1,0 +1,4 @@
+# Verification suite dependencies (in addition to requirements.txt).
+-r requirements.txt
+pytest>=7.4
+httpx>=0.25

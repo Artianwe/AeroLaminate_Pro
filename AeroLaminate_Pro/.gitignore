@@ -1,0 +1,25 @@
+# AeroLaminate Pro
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+backend/.venv/
+.pytest_cache/
+*.egg-info/
+# User data (local material library edits)
+backend/user_data/*.json
+backend/user_data/*.tmp
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+*.tsbuildinfo
+npm-debug.log*
+# Launcher stamps and logs
+*.stamp
+logs/
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

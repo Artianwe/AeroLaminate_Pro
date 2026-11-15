@@ -1,0 +1,33 @@
+{
+  "name": "aerolaminate-pro-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AeroLaminate Pro engineering workspace. Author, owner and maintainer: Anwesh Ajitabh Dash.",
+  "author": "Anwesh Ajitabh Dash",
+  "scripts": {
+    "dev": "next dev -p 3000 -H 127.0.0.1",
+    "build": "next build",
+    "start": "next start -p 3000 -H 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/layup.test.mjs"
+  },
+  "dependencies": {
+    "next": "15.5.28",
+    "react": "19.1.10",
+    "react-dom": "19.1.10",
+    "recharts": "2.15.4"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.30",
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
+    "autoprefixer": "10.4.21",
+    "postcss": "8.5.6",
+    "tailwindcss": "3.4.19",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^19.8.0 || >=20.0.0"
+  },
+  "license": "UNLICENSED"
+}

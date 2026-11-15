@@ -1,0 +1,1068 @@
+{
+ "schema_version": 1,
+ "author": "Anwesh Ajitabh Dash",
+ "notes": "Shipped AeroLaminate Pro material database. Mean/typical values, NOT design allowables. Each property carries status and source.",
+ "references": {
+  "WWFE98": "Soden P.D., Hinton M.J., Kaddour A.S. (1998) Lamina properties, lay-up configurations and loading conditions for a range of fibre-reinforced composite laminates. Compos. Sci. Technol. 58(7):1011-1022. doi:10.1016/S0266-3538(98)00078-5",
+  "CAM07": "Camanho P.P., Maimi P., Davila C.G. (2007) Prediction of size effects in notched laminates using continuum damage mechanics. Compos. Sci. Technol. 67:2715-2727. doi:10.1016/j.compscitech.2007.02.005",
+  "HEX8552": "Hexcel HexPly 8552 Product Data Sheet (EU), https://hexcel.com/wp-content/uploads/2025/12/HexPly_8552_eu_DataSheet1.pdf",
+  "NCAMP5320": "NCAMP CAM-RP-2013-002 Rev A (2017) Cycom 5320-1 T650 Unitape Qualification Material Property Data Report; NCP-RP-2013-001 Rev A (statistical analysis); NMS 532/5 Rev A.",
+  "TH80": "Tsai S.W., Hahn H.T. (1980) Introduction to Composite Materials. Technomic. Reproduced in Kaw A.K. (2006) Mechanics of Composite Materials, 2nd ed., CRC, Table 2.1.",
+  "ROM": "Rule-of-mixtures estimate computed for AeroLaminate Pro; see note.",
+  "ARX2607": "arXiv:2607.07977 (2026), 'A Puck-informed mode-resolved phase-field fatigue framework for unidirectional composites', Table 1 (IM7/8552 card; the paper calls it a numerical demonstration card and does not state its origin). Secondary source.",
+  "LSD-T300": "lsdyna-online.com/wp-content/uploads/2019/08/c2.pdf, uncited material table row 'Carbon T300/Epoxy 5208'. Secondary source.",
+  "NMS532": "NCAMP NMS 532/5 Rev A (17 Apr 2017), material specification for Cycom 5320-1 T650 unitape: acceptance requirements, not property values.",
+  "NCAMP8552": "NCAMP CAM-RP-2009-015 Rev A (2011) Hexcel 8552 IM7 Uni Data Report; NCP-RP-2009-028 Rev B (2019) SAR. Located but not retrievable (network policy)."
+ },
+ "materials": [
+  {
+   "id": "IM7_8552",
+   "name": "IM7/8552",
+   "manufacturer": "Hexcel",
+   "form": "Unidirectional prepreg tape",
+   "cure": "Autoclave, 180 C nominal (manufacturer cure cycle)",
+   "condition": "Room-temperature dry (RTD), mean values",
+   "direction_convention": "1 = fibre, 2 = in-plane transverse, 3 = through-thickness",
+   "applicability": "Lamina set as used by Camanho et al. (2007) for notched-strength modelling. Mean values, not basis allowables. Do not mix with datasheet values in one analysis.",
+   "properties": {
+    "E1": {
+     "value": 171420,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "CAM07",
+     "note": "Datasheet 0 deg tensile modulus is 164 GPa (HEX8552); different test basis.",
+     "verification": "secondary",
+     "verification_note": "Matches arXiv:2607.07977 Table 1 [ARX2607]; primary [CAM07] not retrieved."
+    },
+    "E2": {
+     "value": 9080,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "CAM07",
+     "verification": "secondary",
+     "verification_note": "Matches arXiv:2607.07977 Table 1 [ARX2607]; primary [CAM07] not retrieved."
+    },
+    "G12": {
+     "value": 5290,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "CAM07",
+     "verification": "secondary",
+     "verification_note": "Matches arXiv:2607.07977 Table 1 [ARX2607]; primary [CAM07] not retrieved."
+    },
+    "nu12": {
+     "value": 0.32,
+     "unit": "-",
+     "status": "literature",
+     "source": "CAM07",
+     "verification": "secondary",
+     "verification_note": "Matches arXiv:2607.07977 Table 1 [ARX2607]; primary [CAM07] not retrieved."
+    },
+    "Xt": {
+     "value": 2323.5,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "CAM07",
+     "note": "Datasheet 0 deg tensile strength is 2724 MPa (HEX8552).",
+     "verification": "unverified",
+     "verification_note": "[ARX2607] lists 2326 MPa (vs 2323.5 stored); primary [CAM07] not retrieved."
+    },
+    "Xc": {
+     "value": 1200.1,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "CAM07",
+     "verification": "secondary",
+     "verification_note": "Matches arXiv:2607.07977 Table 1 [ARX2607]; primary [CAM07] not retrieved."
+    },
+    "Yt": {
+     "value": 62.3,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "CAM07",
+     "note": "UD (unconstrained) value; datasheet 90 deg tensile strength 64 MPa (HEX8552).",
+     "verification": "secondary",
+     "verification_note": "Matches arXiv:2607.07977 Table 1 [ARX2607]; primary [CAM07] not retrieved."
+    },
+    "Yc": {
+     "value": 199.8,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "CAM07",
+     "verification": "unverified",
+     "verification_note": "[ARX2607] lists 200 MPa (vs 199.8 stored); primary [CAM07] not retrieved."
+    },
+    "S12": {
+     "value": 92.3,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "CAM07",
+     "note": "In-plane shear strength S_L (UD value).",
+     "verification": "secondary",
+     "verification_note": "Matches arXiv:2607.07977 Table 1 [ARX2607]; primary [CAM07] not retrieved."
+    },
+    "S23": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Transverse shear strength not in source; Hashin MC uses Yc/2 assumption (flagged)."
+    },
+    "ILSS": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Short-beam strength (ASTM D2344) not loaded; interlaminar check uses S12 (flagged)."
+    },
+    "eps1t": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Not in source; max strain/LaRC03 use derived Xt/E1 (flagged)."
+    },
+    "eps1c": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Not in source; derived Xc/E1 used (flagged)."
+    },
+    "eps2t": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived Yt/E2 used (flagged)."
+    },
+    "eps2c": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived Yc/E2 used (flagged)."
+    },
+    "gamma12u": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived S12/G12 used (flagged); real shear response is non-linear."
+    },
+    "GIc": {
+     "value": 0.2774,
+     "unit": "N/mm",
+     "status": "literature",
+     "source": "CAM07",
+     "note": "Mode I fracture toughness.",
+     "verification": "secondary",
+     "verification_note": "[ARX2607] lists 0.277 N/mm interface toughness."
+    },
+    "GIIc": {
+     "value": 0.7879,
+     "unit": "N/mm",
+     "status": "literature",
+     "source": "CAM07",
+     "note": "Mode II fracture toughness.",
+     "verification": "unverified",
+     "verification_note": "Primary source not retrievable in this environment (network policy); value not confirmed by any accessible source."
+    },
+    "t_ply": {
+     "value": 0.131,
+     "unit": "mm",
+     "status": "datasheet",
+     "source": "HEX8552",
+     "note": "Nominal cured ply thickness at 35 % resin content (datasheet).",
+     "verification": "secondary",
+     "verification_note": "Hexcel 8552 EU datasheet value seen via search extracts (two independent searches); PDF not retrievable."
+    },
+    "density": {
+     "value": 1570,
+     "unit": "kg/m3",
+     "status": "estimated",
+     "source": "ROM",
+     "note": "Rule of mixtures with fibre 1.78 g/cm3, resin 1.30 g/cm3, Vf 0.577. Verify with ASTM D792 data.",
+     "verification": "unverified",
+     "verification_note": "Rule-of-mixtures estimate."
+    },
+    "alpha1": {
+     "value": null,
+     "unit": "1/C",
+     "status": "unavailable",
+     "note": "No traceable value retrieved for this lamina set.",
+     "verification": "unverified",
+     "verification_note": "NOT ENTERED. A Hexcel IM7 fibre datasheet extract lists a 'typical HexPly 8552 composite' CTE of -0.64 ppm/C without direction or test basis; insufficient to populate alpha1/alpha2. Use NCAMP/CMH-17 or test data."
+    },
+    "alpha2": {
+     "value": null,
+     "unit": "1/C",
+     "status": "unavailable",
+     "note": "No traceable value retrieved for this lamina set.",
+     "verification": "unverified",
+     "verification_note": "NOT ENTERED (see alpha1)."
+    },
+    "beta1": {
+     "value": null,
+     "unit": "1/%",
+     "status": "unavailable",
+     "note": "No traceable value retrieved."
+    },
+    "beta2": {
+     "value": null,
+     "unit": "1/%",
+     "status": "unavailable",
+     "note": "No traceable value retrieved."
+    },
+    "Tg_dry": {
+     "value": 200,
+     "unit": "C",
+     "status": "estimated",
+     "note": "Approximate dry Tg for 8552; confirm with ASTM E1640 data before using hot/wet estimates.",
+     "verification": "unverified",
+     "verification_note": "Estimate."
+    },
+    "Vf": {
+     "value": 0.577,
+     "unit": "-",
+     "status": "datasheet",
+     "source": "HEX8552",
+     "note": "Nominal fibre volume (datasheet).",
+     "verification": "secondary",
+     "verification_note": "Hexcel 8552 EU datasheet value seen via search extract; PDF not retrievable."
+    }
+   },
+   "verification_log": [
+    {
+     "date": "2026-10-24",
+     "by": "AeroLaminate Pro research pass",
+     "finding": "Primary documents (manufacturer datasheets, NASA NTRS, NCAMP/NIAR) were blocked by the environment network policy; only web-search extracts were available. Per-property 'verification' records the outcome."
+    }
+   ]
+  },
+  {
+   "id": "AS4_3501-6",
+   "name": "AS4/3501-6",
+   "manufacturer": "Hexcel (Hercules)",
+   "form": "Unidirectional prepreg tape",
+   "cure": "Autoclave, 177 C nominal",
+   "condition": "RTD, WWFE-I lamina data",
+   "direction_convention": "1 = fibre, 2 = in-plane transverse, 3 = through-thickness",
+   "applicability": "WWFE-I data set (Soden et al. 1998). Transcribed from the widely reproduced WWFE-I table; original PDF could not be retrieved in the research session: verify before design use.",
+   "properties": {
+    "E1": {
+     "value": 126000,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "E2": {
+     "value": 11000,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "G12": {
+     "value": 6600,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "WWFE98",
+     "note": "Initial shear modulus; WWFE-I gives a non-linear shear curve.",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "nu12": {
+     "value": 0.28,
+     "unit": "-",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "Xt": {
+     "value": 1950,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "Xc": {
+     "value": 1480,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "Yt": {
+     "value": 48,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "Yc": {
+     "value": 200,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "S12": {
+     "value": 79,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "S23": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Not provided; Hashin MC uses Yc/2 (flagged)."
+    },
+    "ILSS": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Not provided; S12 used for interlaminar screening (flagged)."
+    },
+    "eps1t": {
+     "value": 0.0138,
+     "unit": "-",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "eps1c": {
+     "value": 0.01175,
+     "unit": "-",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "eps2t": {
+     "value": 0.00436,
+     "unit": "-",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "eps2c": {
+     "value": 0.02,
+     "unit": "-",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "gamma12u": {
+     "value": 0.02,
+     "unit": "-",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "GIc": {
+     "value": null,
+     "unit": "N/mm",
+     "status": "unavailable",
+     "note": "Not in WWFE-I set; LaRC03 unavailable."
+    },
+    "GIIc": {
+     "value": null,
+     "unit": "N/mm",
+     "status": "unavailable",
+     "note": "Not in WWFE-I set; LaRC03 unavailable."
+    },
+    "t_ply": {
+     "value": 0.13,
+     "unit": "mm",
+     "status": "estimated",
+     "note": "Typical cured ply thickness; WWFE-I specifies thickness per test laminate.",
+     "verification": "unverified",
+     "verification_note": "Typical value estimate."
+    },
+    "density": {
+     "value": 1580,
+     "unit": "kg/m3",
+     "status": "estimated",
+     "source": "ROM",
+     "note": "Rule of mixtures, fibre 1.79 g/cm3, resin 1.265 g/cm3, Vf 0.60.",
+     "verification": "unverified",
+     "verification_note": "Rule-of-mixtures estimate."
+    },
+    "alpha1": {
+     "value": -1e-06,
+     "unit": "1/C",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "alpha2": {
+     "value": 2.6e-05,
+     "unit": "1/C",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    },
+    "beta1": {
+     "value": null,
+     "unit": "1/%",
+     "status": "unavailable",
+     "note": "Not in WWFE-I set."
+    },
+    "beta2": {
+     "value": null,
+     "unit": "1/%",
+     "status": "unavailable",
+     "note": "Not in WWFE-I set."
+    },
+    "Tg_dry": {
+     "value": null,
+     "unit": "C",
+     "status": "unavailable",
+     "note": "Not loaded; hot/wet estimate unavailable."
+    },
+    "Vf": {
+     "value": 0.6,
+     "unit": "-",
+     "status": "literature",
+     "source": "WWFE98",
+     "verification": "unverified",
+     "verification_note": "WWFE-I value as widely reproduced; the 1998 table could not be retrieved and no accessible source confirmed it. Other AS4/3501-6 data sets differ (e.g. E1 138.9-148.9 GPa in NASA/DTIC/Herakovich sources): do not mix sets."
+    }
+   },
+   "verification_log": [
+    {
+     "date": "2026-10-24",
+     "by": "AeroLaminate Pro research pass",
+     "finding": "Primary documents (manufacturer datasheets, NASA NTRS, NCAMP/NIAR) were blocked by the environment network policy; only web-search extracts were available. Per-property 'verification' records the outcome."
+    }
+   ]
+  },
+  {
+   "id": "CYCOM5320-1_T650",
+   "name": "CYCOM 5320-1 / T650-35 (145 gsm unitape)",
+   "manufacturer": "Solvay / Syensqo (Cytec)",
+   "form": "Unidirectional prepreg tape, out-of-autoclave (vacuum-bag-only)",
+   "cure": "Vacuum-bag only, per NPS 85321",
+   "condition": "PLACEHOLDER - see applicability",
+   "direction_convention": "1 = fibre, 2 = in-plane transverse, 3 = through-thickness",
+   "applicability": "NCAMP qualification data exist (CAM-RP-2013-002 Rev A, NCP-RP-2013-001 Rev A) but numerical values could not be extracted during research. ALL mechanical values are illustrative. Results computed with this record must not be used for engineering decisions.",
+   "properties": {
+    "E1": {
+     "value": 146000,
+     "unit": "MPa",
+     "status": "illustrative",
+     "source": "ROM",
+     "note": "Rough rule-of-mixtures estimate (fibre modulus ~241 GPa x Vf 0.60). ILLUSTRATIVE placeholder for UI demonstration only; not derived from NCAMP data. Replace with NCAMP NCP-RP-2013-001 Rev A values. Spec cross-check only [NMS532]: 0 deg RT tension modulus requirement 18.39-21.77 Msi (126.8-150.1 GPa), average strength >= 276.39 ksi (1905.6 MPa) - acceptance limits, not qualification means.",
+     "verification": "unverified",
+     "verification_note": "ILLUSTRATIVE placeholder - analyses are blocked unless demonstration mode is explicitly enabled. NCAMP NCP-RP-2013-001 Rev A / CAM-RP-2013-002 Rev A not retrievable."
+    },
+    "E2": {
+     "value": 8800,
+     "unit": "MPa",
+     "status": "illustrative",
+     "note": "ILLUSTRATIVE placeholder for UI demonstration only; not derived from NCAMP data. Replace with NCAMP NCP-RP-2013-001 Rev A values.",
+     "verification": "unverified",
+     "verification_note": "ILLUSTRATIVE placeholder - analyses are blocked unless demonstration mode is explicitly enabled. NCAMP NCP-RP-2013-001 Rev A / CAM-RP-2013-002 Rev A not retrievable."
+    },
+    "G12": {
+     "value": 5000,
+     "unit": "MPa",
+     "status": "illustrative",
+     "note": "ILLUSTRATIVE placeholder for UI demonstration only; not derived from NCAMP data. Replace with NCAMP NCP-RP-2013-001 Rev A values.",
+     "verification": "unverified",
+     "verification_note": "ILLUSTRATIVE placeholder - analyses are blocked unless demonstration mode is explicitly enabled. NCAMP NCP-RP-2013-001 Rev A / CAM-RP-2013-002 Rev A not retrievable."
+    },
+    "nu12": {
+     "value": 0.31,
+     "unit": "-",
+     "status": "illustrative",
+     "note": "ILLUSTRATIVE placeholder for UI demonstration only; not derived from NCAMP data. Replace with NCAMP NCP-RP-2013-001 Rev A values.",
+     "verification": "unverified",
+     "verification_note": "ILLUSTRATIVE placeholder - analyses are blocked unless demonstration mode is explicitly enabled. NCAMP NCP-RP-2013-001 Rev A / CAM-RP-2013-002 Rev A not retrievable."
+    },
+    "Xt": {
+     "value": 2200,
+     "unit": "MPa",
+     "status": "illustrative",
+     "note": "ILLUSTRATIVE placeholder for UI demonstration only; not derived from NCAMP data. Replace with NCAMP NCP-RP-2013-001 Rev A values.",
+     "verification": "unverified",
+     "verification_note": "ILLUSTRATIVE placeholder - analyses are blocked unless demonstration mode is explicitly enabled. NCAMP NCP-RP-2013-001 Rev A / CAM-RP-2013-002 Rev A not retrievable."
+    },
+    "Xc": {
+     "value": 1500,
+     "unit": "MPa",
+     "status": "illustrative",
+     "note": "ILLUSTRATIVE placeholder for UI demonstration only; not derived from NCAMP data. Replace with NCAMP NCP-RP-2013-001 Rev A values.",
+     "verification": "unverified",
+     "verification_note": "ILLUSTRATIVE placeholder - analyses are blocked unless demonstration mode is explicitly enabled. NCAMP NCP-RP-2013-001 Rev A / CAM-RP-2013-002 Rev A not retrievable."
+    },
+    "Yt": {
+     "value": 60,
+     "unit": "MPa",
+     "status": "illustrative",
+     "note": "ILLUSTRATIVE placeholder for UI demonstration only; not derived from NCAMP data. Replace with NCAMP NCP-RP-2013-001 Rev A values.",
+     "verification": "unverified",
+     "verification_note": "ILLUSTRATIVE placeholder - analyses are blocked unless demonstration mode is explicitly enabled. NCAMP NCP-RP-2013-001 Rev A / CAM-RP-2013-002 Rev A not retrievable."
+    },
+    "Yc": {
+     "value": 230,
+     "unit": "MPa",
+     "status": "illustrative",
+     "note": "ILLUSTRATIVE placeholder for UI demonstration only; not derived from NCAMP data. Replace with NCAMP NCP-RP-2013-001 Rev A values.",
+     "verification": "unverified",
+     "verification_note": "ILLUSTRATIVE placeholder - analyses are blocked unless demonstration mode is explicitly enabled. NCAMP NCP-RP-2013-001 Rev A / CAM-RP-2013-002 Rev A not retrievable."
+    },
+    "S12": {
+     "value": 95,
+     "unit": "MPa",
+     "status": "illustrative",
+     "note": "ILLUSTRATIVE placeholder for UI demonstration only; not derived from NCAMP data. Replace with NCAMP NCP-RP-2013-001 Rev A values.",
+     "verification": "unverified",
+     "verification_note": "ILLUSTRATIVE placeholder - analyses are blocked unless demonstration mode is explicitly enabled. NCAMP NCP-RP-2013-001 Rev A / CAM-RP-2013-002 Rev A not retrievable."
+    },
+    "S23": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Not available."
+    },
+    "ILSS": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Not available."
+    },
+    "eps1t": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived Xt/E1 used."
+    },
+    "eps1c": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "eps2t": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "eps2c": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "gamma12u": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "GIc": {
+     "value": null,
+     "unit": "N/mm",
+     "status": "unavailable",
+     "note": "Not available; LaRC03 unavailable."
+    },
+    "GIIc": {
+     "value": null,
+     "unit": "N/mm",
+     "status": "unavailable",
+     "note": "Not available."
+    },
+    "t_ply": {
+     "value": 0.1364,
+     "unit": "mm",
+     "status": "calculated",
+     "note": "Fibre 0.0819 mm + resin 0.0545 mm from FAW 145 g/m2, 33 % RC (NMS 532/5 class), rho_f 1.77, rho_r 1.31 g/cm3 (assumed), no resin bleed.",
+     "verification": "unverified",
+     "verification_note": "Calculated with an assumed resin density (1.31 g/cm3)."
+    },
+    "density": {
+     "value": 1587,
+     "unit": "kg/m3",
+     "status": "calculated",
+     "note": "Areal mass / calculated ply thickness.",
+     "verification": "unverified",
+     "verification_note": "Calculated with an assumed resin density."
+    },
+    "alpha1": {
+     "value": null,
+     "unit": "1/C",
+     "status": "unavailable",
+     "note": "Not available."
+    },
+    "alpha2": {
+     "value": null,
+     "unit": "1/C",
+     "status": "unavailable",
+     "note": "Not available."
+    },
+    "beta1": {
+     "value": null,
+     "unit": "1/%",
+     "status": "unavailable",
+     "note": "Not available."
+    },
+    "beta2": {
+     "value": null,
+     "unit": "1/%",
+     "status": "unavailable",
+     "note": "Not available."
+    },
+    "Tg_dry": {
+     "value": null,
+     "unit": "C",
+     "status": "unavailable",
+     "note": "Not available."
+    },
+    "Vf": {
+     "value": 0.6,
+     "unit": "-",
+     "status": "calculated",
+     "note": "From FAW and resin content (see t_ply).",
+     "verification": "unverified",
+     "verification_note": "Calculated with an assumed resin density."
+    }
+   },
+   "verification_log": [
+    {
+     "date": "2026-10-24",
+     "by": "AeroLaminate Pro research pass",
+     "finding": "Primary documents (manufacturer datasheets, NASA NTRS, NCAMP/NIAR) were blocked by the environment network policy; only web-search extracts were available. Per-property 'verification' records the outcome."
+    }
+   ]
+  },
+  {
+   "id": "T300_5208",
+   "name": "T300/5208 (textbook reference)",
+   "manufacturer": "Toray fibre / Narmco resin (historic)",
+   "form": "Unidirectional prepreg",
+   "cure": "Autoclave",
+   "condition": "Textbook typical values",
+   "direction_convention": "1 = fibre, 2 = in-plane transverse, 3 = through-thickness",
+   "applicability": "Classic textbook data used for verification problems (Tsai & Hahn 1980; Kaw 2006). Historic material; not a current production system.",
+   "properties": {
+    "E1": {
+     "value": 181000,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "secondary",
+     "verification_note": "E1/E2/G12 and stress-based strengths match an uncited table row [LSD-T300] (that table also lists a second strength set 1448/1448/44.8/248/62.1 MPa)."
+    },
+    "E2": {
+     "value": 10300,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "secondary",
+     "verification_note": "E1/E2/G12 and stress-based strengths match an uncited table row [LSD-T300] (that table also lists a second strength set 1448/1448/44.8/248/62.1 MPa)."
+    },
+    "G12": {
+     "value": 7170,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "secondary",
+     "verification_note": "E1/E2/G12 and stress-based strengths match an uncited table row [LSD-T300] (that table also lists a second strength set 1448/1448/44.8/248/62.1 MPa)."
+    },
+    "nu12": {
+     "value": 0.28,
+     "unit": "-",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "Xt": {
+     "value": 1500,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "secondary",
+     "verification_note": "E1/E2/G12 and stress-based strengths match an uncited table row [LSD-T300] (that table also lists a second strength set 1448/1448/44.8/248/62.1 MPa)."
+    },
+    "Xc": {
+     "value": 1500,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "secondary",
+     "verification_note": "E1/E2/G12 and stress-based strengths match an uncited table row [LSD-T300] (that table also lists a second strength set 1448/1448/44.8/248/62.1 MPa)."
+    },
+    "Yt": {
+     "value": 40,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "secondary",
+     "verification_note": "E1/E2/G12 and stress-based strengths match an uncited table row [LSD-T300] (that table also lists a second strength set 1448/1448/44.8/248/62.1 MPa)."
+    },
+    "Yc": {
+     "value": 246,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "secondary",
+     "verification_note": "E1/E2/G12 and stress-based strengths match an uncited table row [LSD-T300] (that table also lists a second strength set 1448/1448/44.8/248/62.1 MPa)."
+    },
+    "S12": {
+     "value": 68,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "secondary",
+     "verification_note": "E1/E2/G12 and stress-based strengths match an uncited table row [LSD-T300] (that table also lists a second strength set 1448/1448/44.8/248/62.1 MPa)."
+    },
+    "S23": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "ILSS": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "eps1t": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "eps1c": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "eps2t": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "eps2c": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "gamma12u": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "GIc": {
+     "value": null,
+     "unit": "N/mm",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "GIIc": {
+     "value": null,
+     "unit": "N/mm",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "t_ply": {
+     "value": 0.125,
+     "unit": "mm",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "density": {
+     "value": 1600,
+     "unit": "kg/m3",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "alpha1": {
+     "value": 2e-08,
+     "unit": "1/C",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "alpha2": {
+     "value": 2.25e-05,
+     "unit": "1/C",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "beta1": {
+     "value": 0.0,
+     "unit": "1/%",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "beta2": {
+     "value": 0.006,
+     "unit": "1/%",
+     "status": "literature",
+     "source": "TH80",
+     "note": "Source value 0.6 per unit moisture mass fraction, converted to per % weight.",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "Tg_dry": {
+     "value": null,
+     "unit": "C",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "Vf": {
+     "value": 0.7,
+     "unit": "-",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    }
+   },
+   "verification_log": [
+    {
+     "date": "2026-10-24",
+     "by": "AeroLaminate Pro research pass",
+     "finding": "Primary documents (manufacturer datasheets, NASA NTRS, NCAMP/NIAR) were blocked by the environment network policy; only web-search extracts were available. Per-property 'verification' records the outcome."
+    }
+   ]
+  },
+  {
+   "id": "EGLASS_EPOXY",
+   "name": "E-glass/epoxy (Scotchply 1002, textbook)",
+   "manufacturer": "3M (historic)",
+   "form": "Unidirectional prepreg",
+   "cure": "Autoclave",
+   "condition": "Textbook typical values",
+   "direction_convention": "1 = fibre, 2 = in-plane transverse, 3 = through-thickness",
+   "applicability": "Textbook data (Tsai & Hahn 1980; Kaw 2006 Table 2.1).",
+   "properties": {
+    "E1": {
+     "value": 38600,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "E2": {
+     "value": 8270,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "G12": {
+     "value": 4140,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "nu12": {
+     "value": 0.26,
+     "unit": "-",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "Xt": {
+     "value": 1062,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "Xc": {
+     "value": 610,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "Yt": {
+     "value": 31,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "Yc": {
+     "value": 118,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "S12": {
+     "value": 72,
+     "unit": "MPa",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "S23": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "ILSS": {
+     "value": null,
+     "unit": "MPa",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "eps1t": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "eps1c": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "eps2t": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "eps2c": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "gamma12u": {
+     "value": null,
+     "unit": "-",
+     "status": "unavailable",
+     "note": "Derived."
+    },
+    "GIc": {
+     "value": null,
+     "unit": "N/mm",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "GIIc": {
+     "value": null,
+     "unit": "N/mm",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "t_ply": {
+     "value": 0.125,
+     "unit": "mm",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "density": {
+     "value": 1800,
+     "unit": "kg/m3",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "alpha1": {
+     "value": 8.6e-06,
+     "unit": "1/C",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "alpha2": {
+     "value": 2.21e-05,
+     "unit": "1/C",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "beta1": {
+     "value": 0.0,
+     "unit": "1/%",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "beta2": {
+     "value": 0.006,
+     "unit": "1/%",
+     "status": "literature",
+     "source": "TH80",
+     "note": "Source value 0.6 per unit moisture mass fraction, converted to per % weight.",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    },
+    "Tg_dry": {
+     "value": null,
+     "unit": "C",
+     "status": "unavailable",
+     "note": "Not provided."
+    },
+    "Vf": {
+     "value": 0.45,
+     "unit": "-",
+     "status": "literature",
+     "source": "TH80",
+     "verification": "unverified",
+     "verification_note": "Textbook value; not confirmed by an accessible source."
+    }
+   },
+   "verification_log": [
+    {
+     "date": "2026-10-24",
+     "by": "AeroLaminate Pro research pass",
+     "finding": "Primary documents (manufacturer datasheets, NASA NTRS, NCAMP/NIAR) were blocked by the environment network policy; only web-search extracts were available. Per-property 'verification' records the outcome."
+    }
+   ]
+  }
+ ]
+}
